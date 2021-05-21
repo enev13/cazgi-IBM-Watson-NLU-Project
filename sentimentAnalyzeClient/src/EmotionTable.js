@@ -13,8 +13,6 @@ class EmotionTable extends React.Component {
                 <tr>
                   <td>{emotion[0]}</td>
                   <td>{emotion[1]}</td>
-                  <td>{emotion[2]}</td>
-                  <td>{emotion[3]}</td>
                 </tr>
               ))
             }
