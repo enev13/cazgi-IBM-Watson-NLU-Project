@@ -45,12 +45,9 @@ class App extends React.Component {
     }
     ret = axios.get(url);
     ret.then((response)=>{
-
-      //Include code here to check the sentiment and fomrat the data accordingly
-
-      this.setState({sentimentOutput:response.data});
+      let sentiment = response.data;
       let output = response.data;
-      if(response.data === "positive") {
+      if(sentiment === "positive") {
         output = <div style={{color:"green",fontSize:20}}>{response.data}</div>
       } else if (response.data === "negative"){
         output = <div style={{color:"red",fontSize:20}}>{response.data}</div>
@@ -80,7 +77,7 @@ class App extends React.Component {
 
   render() {
     return (  
-      <div className="Sentiment Analyzer">
+      <div className="App">
       <button className="btn btn-info" onClick={this.renderTextArea}>Text</button>
         <button className="btn btn-dark"  onClick={this.renderTextBox}>URL</button>
         <br/><br/>
